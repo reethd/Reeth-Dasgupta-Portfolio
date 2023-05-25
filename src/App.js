@@ -3,15 +3,18 @@ import About from "./components/about/About";
 import Portfolio from "./components/portfolio/Portfolio";
 import Resume from "./components/resume/Resume";
 import Contact from "./components/contact/Contact";
+import "./app.scss";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <About />
-      <Portfolio />
-      <Resume />
-      <Contact />
+      <div className="sections">
+        <About />
+        <Portfolio />
+        <Resume />
+        <Contact />
+      </div>
     </div>
   );
 }
