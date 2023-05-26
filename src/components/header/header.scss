@@ -1,8 +1,40 @@
+@import "../../global.scss";
+
 .header{
     width: 100%;
     height: 70px;
-    background-color: #21023a;
+    background-color: $mainColor;
+    color: white;
     position: fixed;
     top: 0;
     z-index: 2;
+}
+
+.wrapper{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+
+        h1{
+            font-size: 40px;
+            font-weight: 100;
+            margin-right: 40px;
+        }
+
+        .icon-container{
+            display: flex;
+            align-items: center;
+            
+            .icon{
+                margin-right: 15px;
+                font-size: 30px;
+            }
+        }
+    }
 }
