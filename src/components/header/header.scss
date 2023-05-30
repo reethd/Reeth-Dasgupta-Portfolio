@@ -7,11 +7,27 @@
     color: white;
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 3;
+
+    &.active{
+        span {
+            &:first-child {
+                transform: rotate(45deg)
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform:rotate(-45deg)
+            }
+        }
+    }
 }
 
 .wrapper{
-    padding: 10px 30px;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +39,7 @@
 
         h1{
             font-size: 35px;
-            font-weight: 100;
+            font-weight: 200;
             margin-right: 40px;
         }
 
@@ -37,4 +53,25 @@
             }
         }
     }
+
+    .right{
+
+        .hamburger{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 25px;
+            cursor: pointer;
+            span {
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                transform-origin: left;
+                transition: all .5s ease;
+            }
+        }
+    }
+
+   
 }
