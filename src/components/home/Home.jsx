@@ -1,6 +1,19 @@
 import "./home.scss"
+import{ FaChevronDown } from "react-icons/fa"
+import{init} from "ityped"
+import { useEffect, useRef } from "react"
 
 export default function Home() {
+
+    const textRef = useRef();
+
+    useEffect(()=>{
+      init(textRef.current, {
+        showCursor: true,
+        strings:["Fullstack Developer", "Web Designer"],
+      });
+    },[]);
+
   return (
     <div className="home" id="home">
         <div className="left">
@@ -11,7 +24,10 @@ export default function Home() {
             <div className="wrapper">
                 <h2>Hello and welcome! My name is </h2>
                 <h1>Reeth Dasgupta</h1>
-                <h3>Fullstack Developer<span></span></h3>
+                <h3>Freelance <span ref={textRef}></span></h3>
+            </div>
+            <div className="arrow-container">
+            <a href="#about"><FaChevronDown style={{fontSize:"8vw"}}/></a>
             </div>
         </div>
     </div>
