@@ -1,0 +1,16 @@
+@import "../../global.scss";
+
+.portfolioList {
+    display: flex; 
+    font-size: 2vw;
+    cursor: pointer; 
+    text-align: center; 
+    overflow: hidden; 
+
+
+    &.active{
+     background-color: $mainColor;
+     color: lemonchiffon;
+     border-radius: 15px;
+    }
+ }        
