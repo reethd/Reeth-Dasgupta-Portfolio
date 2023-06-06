@@ -40,6 +40,7 @@ export const readmeGenerator = {
 
 export const employeeTracker = {
     id: 4,
+    title: "Employee Tracker",
     description:
       "Node app that allows a user to interact with a MySQL database to organize, edit and delete employees, their roles, departments, salaries, etc.",
     img: "../assets/employeeTracker.png",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import {
@@ -13,6 +13,7 @@ import {
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("weather dashboard");
+  const [data, setData] = useState({});
 
   const list = [
     {
@@ -45,6 +46,34 @@ export default function Portfolio() {
     },
   ];
 
+  useEffect(() => {
+    switch (selected) {
+      case "weather dashboard":
+        setData(weatherDashboard);
+        break;
+      case "social network api":
+        setData(socialNetworkApi);
+        break;
+      case "everybody eats":
+        setData(everybodyEats);
+        break;
+      case "readme generator":
+        setData(readmeGenerator);
+        break;
+      case "employee tracker":
+        setData(employeeTracker);
+        break;
+      case "digital diy bulletin board":
+        setData(digitalDiyBulletinBoard);
+        break;
+      case "free school":
+        setData(freeSchool);
+        break;
+      default:
+        setData(weatherDashboard);
+    }
+  }, [selected]);
+
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
@@ -60,32 +89,23 @@ export default function Portfolio() {
       </ul>
       <div className="container">
         <div className="item">
-          <img src="../assets/weatherDash.png" />
-          <h3>Weather Dashboard</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/socialNetwork.png" />
-          <h3>Social Network API</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/everybodyEats.png" />
-          <h3>Everybody Eats</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/readmeGenerator.png" />
-          <h3>Readme Generator</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/employeeTracker.png" />
-          <h3>Employee Tracker</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/ddbb.png" />
-          <h3>Digital DIY Bulletin Board</h3>
-        </div>
-        <div className="item">
-          <img src="../assets/freeschool.png" />
-          <h3>Free School</h3>
+          <img src={data.img} />
+          <h3>{data.title}</h3>
+          <p>{data.description}</p>
+          <div className="button-container">
+          
+            <a href={data.repo} className="btn">
+              Github Link
+            </a>
+          
+          {data.link ? (
+            
+              <a href={data.link} className="btn">
+                Deployed Link
+              </a>
+            
+          ) : null}
+          </div>
         </div>
       </div>
     </div>

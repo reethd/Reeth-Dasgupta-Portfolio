@@ -27,7 +27,7 @@ export default function Home() {
                 <h3>Freelance <span ref={textRef}></span></h3>
             </div>
             <div className="arrow-container">
-            <a href="#about"><FaChevronDown style={{fontSize:"8vw"}}/></a>
+            <a href="#about"><FaChevronDown style={{fontSize:"50px"}}/></a>
             </div>
         </div>
     </div>
