@@ -1,3 +1,26 @@
+@import "../../global.scss";
+
 .resume{
-    background-color: lightseagreen;
+    background-color: #f8a1db;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    h1{
+        font-size: 60px;
+        color: $mainColor;
+        overflow: hidden; 
+        z-index: 1; 
+        position: absolute;
+        top: 3%;
+    }
+
+    .resWindow {
+        border-radius: 0%;
+        width: 60vw;
+        height: 60vh;
+
+    }
 }
