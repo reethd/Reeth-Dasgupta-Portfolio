@@ -1,113 +1,62 @@
 import { useEffect, useState } from "react";
-import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
-import {
-  weatherDashboard,
-  socialNetworkApi,
-  everybodyEats,
-  readmeGenerator,
-  employeeTracker,
-  digitalDiyBulletinBoard,
-  freeSchool,
-} from "../../portfolioData";
+import { data } from "../../portfolioData";
+import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
+
 
 export default function Portfolio() {
-  const [selected, setSelected] = useState("weather dashboard");
-  const [data, setData] = useState({});
+  let [currentSlide, setCurrentSlide] = useState(0);
 
-  const list = [
-    {
-      id: "weather dashboard",
-      title: "Weather Dashboard",
-    },
-    {
-      id: "social network api",
-      title: "Social Network API",
-    },
-    {
-      id: "everybody eats",
-      title: "Everybody Eats",
-    },
-    {
-      id: "readme generator",
-      title: "Readme Generator",
-    },
-    {
-      id: "employee tracker",
-      title: "Employee Tracker",
-    },
-    {
-      id: "digital diy bulletin board",
-      title: "Digital DIY Bulletin Board",
-    },
-    {
-      id: "free school",
-      title: "Free School",
-    },
-  ];
+  const handleClick = (direction) => {
+    direction === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : data.length - 1)
+      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
 
-  useEffect(() => {
-    switch (selected) {
-      case "weather dashboard":
-        setData(weatherDashboard);
-        break;
-      case "social network api":
-        setData(socialNetworkApi);
-        break;
-      case "everybody eats":
-        setData(everybodyEats);
-        break;
-      case "readme generator":
-        setData(readmeGenerator);
-        break;
-      case "employee tracker":
-        setData(employeeTracker);
-        break;
-      case "digital diy bulletin board":
-        setData(digitalDiyBulletinBoard);
-        break;
-      case "free school":
-        setData(freeSchool);
-        break;
-      default:
-        setData(weatherDashboard);
-    }
-  }, [selected]);
+    console.log(currentSlide);
+  };
 
   return (
-    <div className="portfolio" id="portfolio">
+    <div className="portfolio">
       <h1>Portfolio</h1>
-      <ul>
-        {list.map((item) => (
-          <PortfolioList
-            title={item.title}
-            active={selected === item.id}
-            setSelected={setSelected}
-            id={item.id}
-          />
-        ))}
-      </ul>
-      <div className="container">
-        <div className="item">
-          <img src={data.img} />
-          <h3>{data.title}</h3>
-          <p>{data.description}</p>
-          <div className="button-container">
-          
-            <a href={data.repo} className="btn">
-              Github Link
-            </a>
-          
-          {data.link ? (
-            
-              <a href={data.link} className="btn">
-                Deployed Link
-              </a>
-            
-          ) : null}
+      <div
+        className="slider"
+        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+      >
+        {data.map((d) => (
+          <div className="container">
+            <div className="item">
+              <div className="left">
+                <div className="left-container">
+                  <h2>{d.title}</h2>
+                  <p>{d.description}</p>
+                  <div className="button-container">
+                    <a href={d.repo} className="btn">
+                      Github Link
+                    </a>
+
+                    
+
+                    {d.link ? <a href={d.link} className="btn">
+                        Deployed Link
+                      </a>
+                     : null}
+                  </div>
+                </div>
+              </div>
+              <div className="right">
+                <img src={d.img} alt="" />
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
+      <div className="nav-dots">
+        {data.map((d)=> (
+          <div className={currentSlide === d.id ? "dot active" : "dot"} onClick={()=> setCurrentSlide(d.id)}></div>
+        ))}
+      </div>
+      <FaCaretLeft className="arrow left" onClick={() => handleClick("left")} />
+      <FaCaretRight className="arrow right" onClick={() => handleClick()} />
     </div>
   );
 }

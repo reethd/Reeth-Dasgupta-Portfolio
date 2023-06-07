@@ -9,10 +9,10 @@ export default function Header({menuOpen, setMenuOpen}) {
         <div className="left">
           <h1>Reeth Dasgupta</h1>
             <div className="icon-container">
-            <FaGithub className="icon"/>
-            <FaLinkedinIn className="icon"/>
-            <FaEnvelope className="icon"/>
-            <FaPhoneSquare className="icon"/>
+            <a href="http://github.com/reethd"><FaGithub className="icon" style={{color: "white"}}/></a>
+            <a href="https://www.linkedin.com/in/reethdasgupta/"><FaLinkedinIn className="icon" style={{color: "white"}}/></a> 
+            <a href="mailto:reeth.dasgupta@gmail.com"><FaEnvelope className="icon" style={{color: "white"}}/></a> 
+            <a href="tel:678-559-4629"><FaPhoneSquare className="icon" style={{color: "white"}}/></a>             
             </div>          
         </div>
         <div className="right">
