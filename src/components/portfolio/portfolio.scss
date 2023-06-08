@@ -10,10 +10,11 @@
     position: relative;
 
     h1{
-        font-size: 60px;
-        color: $mainColor;
+        font-size: 6vw;
+        font-weight: 400;
         position: absolute;
-        top: 5%;
+        top: 0;
+        color: $mainColor;
         overflow: hidden; 
         z-index: 1; 
     }
@@ -137,8 +138,10 @@
                             padding: 3px 10px;
                             border: 3px outset;
                             font-size: 15px;
-                            width: 90px;
+                            width: 100px;
+                            font-weight: 700;
                             text-align: center;
+                            text-decoration: none;
         
                             
                             &:hover{

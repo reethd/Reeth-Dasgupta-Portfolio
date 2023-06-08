@@ -1,3 +1,103 @@
+@import "../../global.scss";
+
 .about{
-    background-color: lightblue;
+    background-color: white;
+    display: flex;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        flex: 0.5;
+        overflow: hidden;
+        background-color: rgb(210, 255, 248);
+        color: $mainColor;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        h2{
+            font-size: 6vw;
+            font-weight: 400;
+            margin-left: 15px;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            position: absolute;
+            top: 0;
+            color: $mainColor;
+        }
+
+        .about{
+            border-radius: 20px;
+            max-height: 70%;
+            width: 70%;
+            margin-left: 15px;
+            padding: 10px;
+
+            p{
+                text-align: center;
+                font-size: 20px;
+                color: $mainColor;
+            }
+        }
+
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        flex: 0.5;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+
+        .icon-container{
+            width: 70%;
+            height: 80%;
+            border-color: $mainColor;
+            border-style: double;
+            border-width: 4px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all .1s ease;
+            position: relative;
+
+            &:hover{
+                width: 75%;
+                height: 85%;
+            }
+            
+        h2{
+            color: $mainColor;
+            font-size: 3vw;
+            margin-bottom: 30px;
+            position: absolute;
+            top: 0;
+
+        }
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            margin-top: 5px;   
+            margin-bottom: 5%;
+            max-height: 70%;     
+
+        .icon{
+            height: auto;
+            width: 70px;
+            margin-right: 25px;
+            margin-bottom: 15px;
+        }
+    }
+
+        }
+
+    }
 }
