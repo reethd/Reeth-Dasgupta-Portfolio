@@ -4,6 +4,10 @@
     background-color: white;
     display: flex;
 
+@include mobile{
+    flex-direction: column;
+}
+
     .left{
         display: flex;
         flex-direction: column;
@@ -24,6 +28,11 @@
             position: absolute;
             top: 0;
             color: $mainColor;
+
+            @include mobile {
+                margin-top: 0;
+                font-size: 40px;
+            }
         }
 
         .about{
@@ -32,6 +41,11 @@
             width: 70%;
             margin-left: 15px;
             padding: 10px;
+
+            @include mobile {
+                width: 90%;
+                max-height: 60%;
+            }
 
             p{
                 text-align: center;
@@ -46,7 +60,6 @@
         display: flex;
         flex-direction: column;
         flex: 0.5;
-        overflow: hidden;
         align-items: center;
         justify-content: center;
 
@@ -72,10 +85,14 @@
             
         h2{
             color: $mainColor;
-            font-size: 3vw;
+            font-size: 50px;
             margin-bottom: 30px;
             position: absolute;
             top: 0;
+
+            @include mobile {
+                font-size: 30px;
+            }
 
         }
 
@@ -92,7 +109,7 @@
 
         .icon{
             height: auto;
-            width: 15%;
+            width: 70px;
             margin-right: 25px;
             margin-bottom: 15px;
         }

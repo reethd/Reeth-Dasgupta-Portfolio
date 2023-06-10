@@ -25,9 +25,9 @@ export default function Portfolio() {
         {data.map((d) => (
           <div className="container">
             <div className="item">
-              <div className="left">
+              <div className="left">              
                 <div className="left-container">
-                  <h2>{d.title}</h2>
+                <h2>{d.title}</h2>                  
                   <p>{d.description}</p>
                   <div className="button-container">
                     <a href={d.repo} className="btn">
