@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/reeth-dasgupta-portfolio/static/css/main.cde4db9f.css",
-    "main.js": "/reeth-dasgupta-portfolio/static/js/main.32a342f6.js",
+    "main.js": "/reeth-dasgupta-portfolio/static/js/main.b6f6f309.js",
     "index.html": "/reeth-dasgupta-portfolio/index.html",
     "main.cde4db9f.css.map": "/reeth-dasgupta-portfolio/static/css/main.cde4db9f.css.map",
-    "main.32a342f6.js.map": "/reeth-dasgupta-portfolio/static/js/main.32a342f6.js.map"
+    "main.b6f6f309.js.map": "/reeth-dasgupta-portfolio/static/js/main.b6f6f309.js.map"
   },
   "entrypoints": [
     "static/css/main.cde4db9f.css",
-    "static/js/main.32a342f6.js"
+    "static/js/main.b6f6f309.js"
   ]
 }
