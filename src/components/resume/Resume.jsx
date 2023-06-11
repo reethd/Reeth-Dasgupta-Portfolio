@@ -8,7 +8,7 @@ export default function Resume() {
       <iframe
         title="resume"
         className="resWindow"
-        src="../assets/resume.pdf"
+        src="assets/resume.pdf"
         width="100%"
         height="450px"
       >
