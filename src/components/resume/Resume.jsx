@@ -13,6 +13,9 @@ export default function Resume() {
         height="450px"
       >
       </iframe>
+      < a href="https://docs.google.com/document/d/1HC4FQzLU-04HHc5WHt9LbhjM0ZTjbCbfhigZ_CpCLbE/edit?usp=sharing">
+        <button>Open in Google Docs</button>
+        </a>
     </div>
       </div>
   )

@@ -8,6 +8,13 @@
     justify-content: center;
     position: relative;
 
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
     h1{
         font-size: 6vw;
         font-weight: 400;
@@ -16,13 +23,33 @@
         color: $mainColor;
         overflow: hidden; 
         z-index: 1; 
+
+        @include mobile{
+            font-size: 40px;
+            top: 3%;
+        }
     }
 
     .resWindow {
-        border-radius: 0%;
         width: 60vw;
         height: 60vh;
-        margin-top: 20px;
 
+
+        @include mobile{
+            width: 80vw;            
+        }
+
+    }
+
+    button {
+        width: 150px;
+        height: 30px;
+        color: white;
+        background-color: $mainColor;
+        border: none;
+        border-radius: 7px;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 5px;
     }
 }
